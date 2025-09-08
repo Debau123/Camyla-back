@@ -1,12 +1,21 @@
 {
-  "name": "product",
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
   "attributes": {
     "name": { "type": "string", "required": true },
     "description": { "type": "text" },
-    "price": { "type": "number", "required": true },
-    "type": { "type": "string", "enum": ["camiseta", "taza", "pegatina", "otro"] },
+    "price": { "type": "decimal", "required": true },
+    "type": { "type": "enumeration", "enum": ["camiseta", "taza", "pegatina", "otro"] },
     "images": { "type": "json" },
-    "collection": { "type": "relation", "target": "collection", "relation": "manyToOne" },
+    "collection": { "type": "relation", "relation": "manyToOne", "target": "api::collection.collection" },
     "variants": {
       "type": "json",
       "example": [
@@ -14,6 +23,6 @@
         { "size": "L", "color": "Rojo", "stock": 5, "sku": "CAM-L-ROJO" }
       ]
     },
-    "stock": { "type": "number" }
+    "stock": { "type": "integer" }
   }
 }

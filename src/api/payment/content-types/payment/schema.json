@@ -1,9 +1,18 @@
 {
-  "name": "payment",
+  "kind": "collectionType",
+  "collectionName": "payments",
+  "info": {
+    "singularName": "payment",
+    "pluralName": "payments",
+    "displayName": "Payment"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
   "attributes": {
-    "order": { "type": "relation", "target": "order", "relation": "oneToOne" },
-    "status": { "type": "string", "enum": ["pendiente", "completado", "fallido"] },
-    "method": { "type": "string", "enum": ["tarjeta", "paypal", "otro"] },
+    "order": { "type": "relation", "relation": "oneToOne", "target": "api::order.order" },
+    "status": { "type": "enumeration", "enum": ["pendiente", "completado", "fallido"] },
+    "method": { "type": "enumeration", "enum": ["tarjeta", "paypal", "otro"] },
     "date": { "type": "date" },
     "transaction": { "type": "string" }
   }

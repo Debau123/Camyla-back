@@ -1,17 +1,26 @@
 {
-  "name": "order",
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
   "attributes": {
-    "user": { "type": "relation", "target": "customer", "relation": "manyToOne" },
+    "user": { "type": "relation", "relation": "manyToOne", "target": "api::customer.customer" },
     "products": {
       "type": "json",
       "example": [
         { "productId": 1, "variant": { "size": "XL", "color": "Azul" }, "quantity": 2 }
       ]
     },
-    "status": { "type": "string", "enum": ["pendiente", "pagado", "enviado", "entregado", "cancelado"] },
+    "status": { "type": "enumeration", "enum": ["pendiente", "pagado", "enviado", "entregado", "cancelado"] },
     "shippingAddress": { "type": "json" },
     "orderDate": { "type": "date" },
-    "total": { "type": "number" },
+    "total": { "type": "decimal" },
     "paymentMethod": { "type": "string" },
     "history": { "type": "json" }
   }

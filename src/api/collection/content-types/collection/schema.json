@@ -1,8 +1,17 @@
 {
-  "name": "collection",
+  "kind": "collectionType",
+  "collectionName": "collections",
+  "info": {
+    "singularName": "collection",
+    "pluralName": "collections",
+    "displayName": "Collection"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
   "attributes": {
     "name": { "type": "string", "required": true },
     "description": { "type": "text" },
-    "products": { "type": "relation", "target": "product", "relation": "oneToMany" }
+    "products": { "type": "relation", "relation": "oneToMany", "target": "api::product.product" }
   }
 }
