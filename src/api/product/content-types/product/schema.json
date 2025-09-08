@@ -14,7 +14,7 @@
     "description": { "type": "text" },
     "price": { "type": "decimal", "required": true },
     "type": { "type": "enumeration", "enum": ["camiseta", "taza", "pegatina", "otro"] },
-    "images": { "type": "json" },
+  "images": { "type": "media", "multiple": true, "required": false },
     "collection": { "type": "relation", "relation": "manyToOne", "target": "api::collection.collection" },
     "variants": {
       "type": "json",
