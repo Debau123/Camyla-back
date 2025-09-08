@@ -12,7 +12,7 @@
     "auth0Id": { "type": "string", "required": true, "unique": true },
     "email":   { "type": "email",  "required": true },
     "name":    { "type": "string" },
-    "picture": { "type": "string" },
+  "picture": { "type": "string" },
   "address": { "type": "string" },
   "city": { "type": "string" },
   "postalCode": { "type": "string" },
