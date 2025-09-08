@@ -1,4 +1,5 @@
-'use strict';
-const { createCoreRouter } = require('@strapi/strapi').factories;
+// lib/auth0.ts
+import { getSession } from "@auth0/nextjs-auth0";
 
-module.exports = createCoreRouter('api::customer.customer');
+// Exporto un objeto con la función para que el resto del código quede igual
+export const auth0 = { getSession };

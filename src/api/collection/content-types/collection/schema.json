@@ -1,0 +1,8 @@
+{
+  "name": "collection",
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "description": { "type": "text" },
+    "products": { "type": "relation", "target": "product", "relation": "oneToMany" }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "product",
+  "attributes": {
+    "name": { "type": "string", "required": true },
+    "description": { "type": "text" },
+    "price": { "type": "number", "required": true },
+    "type": { "type": "string", "enum": ["camiseta", "taza", "pegatina", "otro"] },
+    "images": { "type": "json" },
+    "collection": { "type": "relation", "target": "collection", "relation": "manyToOne" },
+    "variants": {
+      "type": "json",
+      "example": [
+        { "size": "XL", "color": "Azul", "stock": 10, "sku": "CAM-XL-AZUL" },
+        { "size": "L", "color": "Rojo", "stock": 5, "sku": "CAM-L-ROJO" }
+      ]
+    },
+    "stock": { "type": "number" }
+  }
+}

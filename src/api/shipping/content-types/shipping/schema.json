@@ -1,0 +1,10 @@
+{
+  "name": "shipping",
+  "attributes": {
+    "order": { "type": "relation", "target": "order", "relation": "oneToOne" },
+    "address": { "type": "json" },
+    "status": { "type": "string", "enum": ["pendiente", "enviado", "entregado"] },
+    "tracking": { "type": "string" },
+    "carrier": { "type": "string" }
+  }
+}

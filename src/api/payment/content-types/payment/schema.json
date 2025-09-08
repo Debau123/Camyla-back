@@ -1,0 +1,10 @@
+{
+  "name": "payment",
+  "attributes": {
+    "order": { "type": "relation", "target": "order", "relation": "oneToOne" },
+    "status": { "type": "string", "enum": ["pendiente", "completado", "fallido"] },
+    "method": { "type": "string", "enum": ["tarjeta", "paypal", "otro"] },
+    "date": { "type": "date" },
+    "transaction": { "type": "string" }
+  }
+}
